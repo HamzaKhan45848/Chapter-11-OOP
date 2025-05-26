@@ -1,6 +1,5 @@
 import unittest
 def city_country(city, country, population=None):
-    """Return a formatted city-country string, optionally including population."""
     if population:
         return f"{city.title()}, {country.title()} – population {population}"
     else:
@@ -8,12 +7,10 @@ def city_country(city, country, population=None):
 class TestCityFunctions(unittest.TestCase):
 
     def test_city_country(self):
-        """Test city_country() with city and country only."""
         formatted = city_country('santiago', 'chile')
         self.assertEqual(formatted, 'Santiago, Chile')
 
     def test_city_country_population(self):
-        """Test city_country() with city, country, and population."""
         formatted = city_country('santiago', 'chile', population=5000000)
         self.assertEqual(formatted, 'Santiago, Chile – population 5000000')
 if __name__ == '__main__':
